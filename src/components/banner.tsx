@@ -13,7 +13,7 @@ const BannerComponent: React.FC = () => {
   const blackBackgroundOpacity = useTransform(scrollY, [0, 500], [0, 1]);
   const dynamicIslandWidth = useTransform(scrollY, [0, 300], ["7rem", "10rem"]);
   const phoneScale = useTransform(scrollY, [0, 300], [1, 1.05]);
-  const phoneY = useTransform(scrollY, [0, 300], ["50vh", "60vh"]);
+  const phoneY = useTransform(scrollY, [0, 300], ["55vh", "60vh"]);
 
   // Responsive breakpoints
   useEffect(() => {
