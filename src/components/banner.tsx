@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import grid from "../assets/grid.png";
+import card1 from "../assets/card1.png";
 import homescreen from "../assets/screenshots/homescreen.jpg";
 
 const BannerComponent: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const { scrollY } = useScroll();
-  
+
   // Enhanced scroll-based transforms
   const gridY = useTransform(scrollY, [0, 500], [0, 150]);
   const backgroundOpacity = useTransform(scrollY, [0, 500], [1, 0]);
@@ -14,6 +15,14 @@ const BannerComponent: React.FC = () => {
   const dynamicIslandWidth = useTransform(scrollY, [0, 300], ["7rem", "10rem"]);
   const phoneScale = useTransform(scrollY, [0, 300], [1, 1.05]);
   const phoneY = useTransform(scrollY, [0, 300], ["25rem", "30rem"]);
+
+  // New transforms for cards
+  const cardScale = useTransform(scrollY, [0, 300], [1, 0.8]);
+  const cardOpacity = useTransform(scrollY, [0, 300], [1, 0.8]);
+  const cardYRight = useTransform(scrollY, [0, 300], [50, 400]);
+  const cardYLeft = useTransform(scrollY, [0, 300], [320, 450]);
+  const cardXRight = useTransform(scrollY, [0, 300], ["5rem", "-8rem"]);
+  const cardXLeft = useTransform(scrollY, [0, 300], ["-5rem", "8rem"]);
 
   // Responsive breakpoints
   useEffect(() => {
@@ -71,18 +80,6 @@ const BannerComponent: React.FC = () => {
     },
   };
 
-  const floatingCardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.4, 0, 0.2, 1],
-      },
-    },
-  };
-
   return (
     <motion.div
       className="relative min-h-[55rem] w-full overflow-hidden"
@@ -90,26 +87,26 @@ const BannerComponent: React.FC = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-gradient-to-b from-[#440C3F] via-[#581550] to-[#6C1565]"
         style={{ opacity: backgroundOpacity }}
       />
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-[#2e0929]"
         style={{ opacity: blackBackgroundOpacity }}
       />
 
       <motion.div
         className="absolute inset-0 h-auto top-0 flex justify-center w-full"
-        style={{ 
-          y: !isMobile ? gridY : 0, 
-          opacity: backgroundOpacity 
+        style={{
+          y: !isMobile ? gridY : 0,
+          opacity: backgroundOpacity,
         }}
       >
         <div className="relative max-w-4xl -bottom-10 h-auto flex flex-col w-full justify-start items-start">
           <img
             src={grid}
-            className="w-full object-cover opacity-70"
+            className="w-full object-cover opacity-15"
             alt="Grid Background"
           />
         </div>
@@ -119,7 +116,7 @@ const BannerComponent: React.FC = () => {
         <div className="max-w-xl mx-auto text-center">
           <motion.h1
             variants={itemVariants}
-            className="text-3xl sm:text-3xl font-normal md:text-6xl   font-serif mb-6 sm:mb-8 text-white tracking-tight"
+            className="text-3xl sm:text-3xl font-normal md:text-6xl font-serif mb-6 sm:mb-8 text-white tracking-tight"
             style={{
               lineHeight: "1.1",
               textShadow: "0 2px 4px rgba(0,0,0,0.2)",
@@ -157,91 +154,60 @@ const BannerComponent: React.FC = () => {
         </div>
       </div>
 
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 w-full flex items-center justify-center"
-        style={{ 
+        style={{
           y: phoneY,
           scale: phoneScale,
         }}
       >
         <motion.img
           src={homescreen}
-          className="bottom-0 border-8 rounded-[1.5rem] border-black w-[15rem] md:w-[25rem] max-w-full"
+          className="bottom-0 border-8 rounded-[3rem] border-black w-[15rem] md:w-[25rem] max-w-full"
           alt="Login Screenshot"
-          whileInView={{ 
+          whileInView={{
             opacity: [0, 1],
-            y: [50, 0] 
+            y: [50, 0],
           }}
-          transition={{ 
+          transition={{
             duration: 0.8,
-            ease: "easeOut"
+            ease: "easeOut",
           }}
         />
-        <motion.div 
+        <motion.div
           className="rounded-[5rem] bg-black h-[1.7rem] absolute top-[1rem]"
-          style={{ 
-            width: dynamicIslandWidth
+          style={{
+            width: dynamicIslandWidth,
           }}
-          transition={{ 
+          transition={{
             type: "spring",
             stiffness: 200,
-            damping: 20
+            damping: 20,
           }}
         />
       </motion.div>
-
-      <motion.div
-        className="absolute hidden md:flex top-1/4 left-4 md:left-8 lg:left-16"
-        variants={floatingCardVariants}
-        initial="hidden"
-        animate="visible"
+      <motion.img
         style={{
-          perspective: "1000px",
+          y: cardYRight,
+          x: cardXRight,
+          scale: cardScale,
+          opacity: cardOpacity,
         }}
-      >
-        <motion.div
-          className="bg-white rounded-lg shadow-xl p-4 w-32  py-[2rem] flex flex-col items-center justify-center md:w-[15rem]"
-          animate={{
-            rotateY: [0, 10, 0],
-            rotateX: [0, 5, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 5,
-            ease: "easeInOut",
-          }}
-        >
-          <h3 className="text-purple-900 font-semibold mb-2">Easy Expense</h3>
-          <p className="text-sm text-gray-600 text-center">Manage your expenses effortlessly</p>
-        </motion.div>
-      </motion.div>
-
-      <motion.div
-        className="absolute hidden md:flex top-1/2 right-4 md:right-8 lg:right-16"
-        variants={floatingCardVariants}
-        initial="hidden"
-        animate="visible"
+        src={card1}
+        className="absolute top-[4rem] right-0 w-[25rem]"
+        alt=""
+      />
+      <motion.img
         style={{
-          perspective: "1000px",
+          y: cardYLeft,
+          x: cardXLeft,
+          scale: cardScale,
+          opacity: cardOpacity,
         }}
-      >
-        <motion.div
-          className="bg-white rounded-lg shadow-xl p-4 w-32 py-[2rem]  flex flex-col items-center justify-center md:w-[15rem]"
-          animate={{
-            rotateY: [0, -10, 0],
-            rotateX: [0, -5, 0],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 5,
-            ease: "easeInOut",
-            delay: 0.5,
-          }}
-        >
-          <h3 className="text-purple-900 font-semibold mb-2">Smart Benefits</h3>
-          <p className="text-sm text-gray-600 text-center">Access your perks instantly</p>
-        </motion.div>
-      </motion.div>
+        src={card1}
+        className="absolute top-[20rem] left-0 w-[25rem]"
+        alt=""
+      />
     </motion.div>
   );
 };
