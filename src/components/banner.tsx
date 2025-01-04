@@ -85,7 +85,7 @@ const BannerComponent: React.FC = () => {
 
   return (
     <motion.div
-      className="relative min-h-screen w-full overflow-hidden"
+      className="relative min-h-[55rem] w-full overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -166,7 +166,7 @@ const BannerComponent: React.FC = () => {
       >
         <motion.img
           src={homescreen}
-          className="bottom-0 border-8 rounded-[1.5rem] border-black w-[20rem] sm:w-[25rem] max-w-full"
+          className="bottom-0 border-8 rounded-[1.5rem] border-black w-[15rem] md:w-[25rem] max-w-full"
           alt="Login Screenshot"
           whileInView={{ 
             opacity: [0, 1],
@@ -191,7 +191,7 @@ const BannerComponent: React.FC = () => {
       </motion.div>
 
       <motion.div
-        className="absolute top-1/4 left-4 md:left-8 lg:left-16"
+        className="absolute hidden md:flex top-1/4 left-4 md:left-8 lg:left-16"
         variants={floatingCardVariants}
         initial="hidden"
         animate="visible"
@@ -217,7 +217,7 @@ const BannerComponent: React.FC = () => {
       </motion.div>
 
       <motion.div
-        className="absolute top-1/2 right-4 md:right-8 lg:right-16"
+        className="absolute hidden md:flex top-1/2 right-4 md:right-8 lg:right-16"
         variants={floatingCardVariants}
         initial="hidden"
         animate="visible"
