@@ -119,7 +119,7 @@ const BannerComponent: React.FC = () => {
         <div className="max-w-xl mx-auto text-center">
           <motion.h1
             variants={itemVariants}
-            className="text-3xl sm:text-4xl font-normal md:text-5xl lg:text-6xl xl:text-7xl font-serif mb-6 sm:mb-8 text-white tracking-tight"
+            className="text-3xl sm:text-3xl font-normal md:text-6xl   font-serif mb-6 sm:mb-8 text-white tracking-tight"
             style={{
               lineHeight: "1.1",
               textShadow: "0 2px 4px rgba(0,0,0,0.2)",
@@ -131,7 +131,7 @@ const BannerComponent: React.FC = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-base sm:text-lg md:text-xl text-gray-100 mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-lg text-gray-100 mb-8 sm:mb-12 max-w-lg mx-auto leading-relaxed"
             style={{
               textShadow: "0 1px 2px rgba(0,0,0,0.1)",
               opacity: 0.9,
