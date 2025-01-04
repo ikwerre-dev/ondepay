@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Outfit";
+  background: #000;
+}
+
+.acme-font{
+    font-family: "Acme";
+}
