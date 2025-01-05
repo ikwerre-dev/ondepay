@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import BannerComponent from "./components/banner";
 import HeaderComponent from "./components/header";
+import FeaturesSection from "./components/features";
 
 function App() {
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
     <div className="min-h-screen bg-[#440C3F]">
       <HeaderComponent />
       <BannerComponent />
-      <div className="min-h-screen bg-[#440C3F]"></div>
+      <FeaturesSection />
     </div>
   );
 }

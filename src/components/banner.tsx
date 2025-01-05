@@ -20,7 +20,7 @@ const BannerComponent: React.FC = () => {
   const cardScale = useTransform(scrollY, [0, 300], [1, 0.8]);
   const cardOpacity = useTransform(scrollY, [0, 300], [1, 0.8]);
   const cardYRight = useTransform(scrollY, [0, 300], [50, 400]);
-  const cardYLeft = useTransform(scrollY, [0, 300], [320, 450]);
+  const cardYLeft = useTransform(scrollY, [0, 300], [80, 320]);
   const cardXRight = useTransform(scrollY, [0, 300], ["5rem", "-8rem"]);
   const cardXLeft = useTransform(scrollY, [0, 300], ["-5rem", "8rem"]);
 
@@ -82,7 +82,7 @@ const BannerComponent: React.FC = () => {
 
   return (
     <motion.div
-      className="relative min-h-[55rem] w-full overflow-hidden"
+      className="relative min-h-[30rem] md:min-h-[55rem] w-full overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -194,7 +194,7 @@ const BannerComponent: React.FC = () => {
           opacity: cardOpacity,
         }}
         src={card1}
-        className="absolute top-[4rem] right-0 w-[25rem]"
+        className="hidden md:flex absolute top-[4rem] right-0 w-[25rem]"
         alt=""
       />
       <motion.img
@@ -205,7 +205,7 @@ const BannerComponent: React.FC = () => {
           opacity: cardOpacity,
         }}
         src={card1}
-        className="absolute top-[20rem] left-0 w-[25rem]"
+        className="hidden md:flex absolute top-[20rem] left-0 w-[25rem]"
         alt=""
       />
     </motion.div>
