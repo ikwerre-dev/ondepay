@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  } from "react";
 import { motion } from "framer-motion";
 import featureimage from "../assets/feature.png";
 import feature1 from "../assets/feature1.svg";
@@ -8,22 +8,8 @@ import feature4 from "../assets/feature4.png";
 import feature5 from "../assets/feature5.png";
 
 const FeaturesSection: React.FC = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
+  
+  
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -39,10 +25,8 @@ const FeaturesSection: React.FC = () => {
 
   return (
     <motion.div
-      initial="hidden"
-      animate={isLoaded ? "visible" : "hidden"}
-      variants={containerVariants}
-      className="bg-[#0c0510] min-h-screen  overflow-hidden pb-[5rem]"
+      
+      className="bg-[#0c0510] min-h-screen relative  overflow-hidden pb-[5rem]"
     >
       <img src={featureimage} className="w-full h-full absolute" alt="" />
       <div className="pt-[5rem] px-4 md:px-8">

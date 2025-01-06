@@ -5,7 +5,7 @@ import cardinfo from "../assets/cardinfo.png";
 const CardInfo = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center gap-[2.5rem] py-[5rem] bg-gradient-to-b from-[#211123] to-[#0d0511]">
-      <section className="container mx-auto bg-[#ccc]/5 rounded-[1rem]  p-[2rem] py-[4rem]">
+      <section className="container mx-auto bg-[#ccc]/5 rounded-[1rem]  p-[2rem] py-[2rem]">
         <div className="grid lg:grid-cols-2 px-[2.5rem] gap-12 items-center">
           <div className="max-w-xl">
             <h1 className="text-3xl text-white font-bold mb-8">
