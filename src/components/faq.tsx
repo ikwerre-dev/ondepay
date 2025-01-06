@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import faqimage from '../assets/faq.png';
+import React, { useState } from "react";
+import { ChevronDown } from "lucide-react";
+import faqimage from "../assets/faq.png";
 
 interface AccordionItemProps {
   question: string;
@@ -9,7 +9,12 @@ interface AccordionItemProps {
   onClick: () => void;
 }
 
-const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen, onClick }) => {
+const AccordionItem: React.FC<AccordionItemProps> = ({
+  question,
+  answer,
+  isOpen,
+  onClick,
+}) => {
   return (
     <div className="bg-[#ccc]/5 px-5 rounded-sm border-b border-purple-800/30">
       <button
@@ -20,13 +25,13 @@ const AccordionItem: React.FC<AccordionItemProps> = ({ question, answer, isOpen,
         <span>{question}</span>
         <ChevronDown
           className={`w-4 h-4 transition-transform duration-200 ${
-            isOpen ? 'transform rotate-180' : ''
+            isOpen ? "transform rotate-180" : ""
           }`}
         />
       </button>
       <div
         className={`overflow-hidden transition-all duration-200 ${
-          isOpen ? 'max-h-40' : 'max-h-0'
+          isOpen ? "max-h-40" : "max-h-0"
         }`}
       >
         <div className="py-4 text-gray-400">{answer}</div>
@@ -41,24 +46,29 @@ const FAQSection: React.FC = () => {
   const faqs = [
     {
       question: "What is OndePay?",
-      answer: "OndePay is a modern digital payment solution that combines security with convenience."
+      answer:
+        "OndePay is a platform that provides virtual US cards for online transactions, making it easy and secure to shop, pay bills, and manage finances globally.",
     },
     {
       question: "How secure is OndePay?",
-      answer: "We utilize WhatsApp's end-to-end encryption along with our own advanced security protocols to ensure your transactions are fully protected."
+      answer:
+        "We prioritize security with industry-standard encryption and our own advanced security protocols, ensuring your virtual card transactions are protected.",
     },
     {
       question: "Can I send money to anyone?",
-      answer: "Yes, you can send money to any OndePay user instantly and securely."
+      answer:
+        "Currently, OndePay focuses on virtual card issuance. You can use your OndePay card for online purchases and payments, but direct money transfers are not yet supported.",
     },
     {
-      question: "Do I need a bank account to use PaySteeze?",
-      answer: "No, you can use PaySteeze without a traditional bank account. Simply load your account using various payment methods."
+      question: "Do I need a bank account to use OndePay?",
+      answer:
+        "No, you do not need a traditional bank account. You can fund your OndePay virtual card using various payment methods like credit/debit cards or bank transfers.",
     },
     {
       question: "How do I get started?",
-      answer: "Download the app, create an account, and verify your identity to start using OndePay."
-    }
+      answer:
+        "Download the app, create an account, complete the identity verification process, and generate your virtual US card to begin using OndePay.",
+    },
   ];
 
   const handleClick = (index: number) => {
@@ -70,14 +80,15 @@ const FAQSection: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-purple-300 mb-4 text-xl">Frequently Asked Question</h2>
+            <h2 className="text-purple-300 mb-4 text-xl">
+              Frequently Asked Question
+            </h2>
             <h1 className="text-3xl font-semibold mb-8 text-white/30">
               What would you like to know about OndePay?
             </h1>
-            <img src={faqimage} className='w-[7rem] mt-[3rem]' alt="" />
-            
+            <img src={faqimage} className="w-[7rem] mt-[3rem]" alt="" />
           </div>
-          
+
           <div className="relative z-10">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -98,4 +109,3 @@ const FAQSection: React.FC = () => {
 };
 
 export default FAQSection;
-
