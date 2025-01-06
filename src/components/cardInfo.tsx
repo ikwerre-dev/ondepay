@@ -4,9 +4,9 @@ import cardinfo from "../assets/cardinfo.png";
  
 const CardInfo = () => {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center gap-[2.5rem] py-[5rem] bg-gradient-to-b from-[#211123] to-[#0d0511]">
-      <section className="container mx-auto bg-[#ccc]/5 rounded-[1rem]  p-[2rem] py-[2rem]">
-        <div className="grid lg:grid-cols-2 px-[2.5rem] gap-12 items-center">
+    <div className="min-h-screen flex flex-col justify-center items-center gap-[2.5rem] px-[2rem] py-[2rem] md:px-0 md:py-[5rem] bg-gradient-to-b from-[#211123] to-[#0d0511]">
+      <section className="container mx-auto bg-[#ccc]/5 rounded-[1rem] p-[2rem] md:p-[2rem] md:py-[2rem]">
+        <div className="grid lg:grid-cols-2 md:px-[2.5rem] gap-12 items-center">
           <div className="max-w-xl">
             <h1 className="text-3xl text-white font-bold mb-8">
               Create Unique Cards in{" "}
@@ -23,15 +23,15 @@ const CardInfo = () => {
             </button>
           </div>
           <motion.div className="flex justify-center ">
-            <img src={cardinfo} alt="" className=" h-[20rem] " />
+            <img src={cardinfo} alt="" className=" md:h-[20rem] " />
           </motion.div>
         </div>
       </section>
      
-      <section className="container mx-auto bg-[#ccc]/5 rounded-[1rem]  p-[2rem] py-[4rem]">
-        <div className="grid lg:grid-cols-2 px-[2.5rem] gap-12 items-center">
+      <section className="container mx-auto bg-[#ccc]/5 rounded-[1rem] p-[2rem] md:p-[2rem] md:py-[2rem]">
+        <div className="grid lg:grid-cols-2 md:px-[2.5rem] gap-12 items-center">
           <motion.div className="flex justify-center ">
-            <img src={cardinfo} alt="" className=" h-[20rem] " />
+            <img src={cardinfo} alt="" className=" md:h-[20rem] " />
           </motion.div>
           <div className="max-w-xl">
             <h1 className="text-3xl text-white font-bold mb-8">

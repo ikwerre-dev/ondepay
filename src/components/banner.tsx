@@ -55,13 +55,13 @@ const BannerComponent: React.FC = () => {
                 textShadow: "0 0 1px rgba(0,0,0,0.1)",
               }}
             >
-              Get Started <ArrowRightIcon size={15} />
+              Download <ArrowRightIcon size={15} />
             </motion.button>
 
             <motion.button
               whileHover="hover"
               whileTap="tap"
-              className="flex gap-3 justify-center items-center bg-transparent border-white border-2 text-white px-10 py-3 rounded-[3rem] font-medium text-sm
+              className="hidden md:flex gap-3 justify-center items-center bg-transparent border-white border-2 text-white px-10 py-3 rounded-[3rem] font-medium text-sm
                        shadow-lg hover:shadow-xl hover:bg-opacity-95 transition-all duration-300"
               style={{
                 backdropFilter: "blur(10px)",
@@ -77,8 +77,8 @@ const BannerComponent: React.FC = () => {
         </div>
         {[1, 2, 3, 4, 5, 6].map((data, index) => {
           const positions = [
-            "w-[2rem] top-[10%] left-[10%]",
-            "w-[2.5rem] top-[10%] right-[10%]",
+            "w-[2rem] top-[1%] md:top-[10%] left-[10%]",
+            "w-5 md:w-[2.5rem] top-[20%] md:top-[10%]  right-[10%]",
             "w-[1.2rem] top-[40%] left-[25%]",
             "w-[2rem] bottom-[10%] left-[10%]",
             "w-[2rem] bottom-[10%] right-[10%]",
