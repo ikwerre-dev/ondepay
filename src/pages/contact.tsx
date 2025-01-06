@@ -45,7 +45,7 @@ function Contact() {
         }}
       />
       <HeaderComponent />
-      <main className="container mx-auto px-4 py-16 relative z-10">
+      <main className="container mx-auto px-4 py-16 relative ">
         <motion.h1 
           className="text-4xl md:text-5xl font-bold mb-8 text-center"
           initial="hidden"

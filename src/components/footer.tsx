@@ -121,8 +121,8 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-gray-400">
-            Copyright © 2024 Ondepay. <a href="https://primescaletechnologies.com" target="_blank">Powered by PrimeScale Technologies</a> All rights reserved.
+          <p className="text-sm text-gray-400 flex flex-col justify-start text-start">
+            Copyright © 2025 Ondepay. <a href="https://primescaletechnologies.com" className="text-[#FFA6F8]" target="_blank">Powered by PrimeScale Technologies</a> All rights reserved.
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-purple-400">

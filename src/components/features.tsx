@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import featureimage from "../assets/feature.png";
 import feature1 from "../assets/feature1.svg";
 import feature2 from "../assets/feature2.png";
@@ -14,7 +15,13 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, image }) => {
   return (
-    <div className="bg-[#150d18] backdrop-blur-sm cursor-pointer text-center rounded-[24px] p-8">
+    <motion.div
+      className="bg-[#150d18] backdrop-blur-sm cursor-pointer text-center rounded-[24px] p-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.05 }}
+    >
       <h3 className="text-2xl mb-4">
         <span className="text-white">{title[0]}</span>{" "}
         <span className="text-[#FFA6F8]">{title[1]}</span>
@@ -28,7 +35,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ title, description, image }) 
         />
       </div>
       <p className="text-gray-300 my-8">{description}</p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -80,7 +87,12 @@ const FeaturesSection: React.FC = () => {
             ))}
           </div>
 
-          <div className="bg-[#150d18] backdrop-blur-sm text-center rounded-[24px] p-8 lg:flex lg:flex-col">
+          <motion.div
+            className="bg-[#150d18] backdrop-blur-sm text-center rounded-[24px] p-8 lg:flex lg:flex-col"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <h3 className="text-2xl mb-4">
               <span className="text-white">Effortlessly</span>{" "}
               <span className="text-[#FFA6F8]">Spend</span>
@@ -99,7 +111,7 @@ const FeaturesSection: React.FC = () => {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

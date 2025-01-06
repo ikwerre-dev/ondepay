@@ -4,6 +4,7 @@ import phone from "../assets/phone.png";
 import star from "../assets/star.png";
 import { ArrowRightIcon, Star } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const BannerComponent: React.FC = () => {
   return (
@@ -23,74 +24,107 @@ const BannerComponent: React.FC = () => {
           <div className="max-w-xl mx-auto text-center mb-[1.5rem]">
             <div className="bg-white/5 flex items-center justify-center text-[#FFA6F8] gap-5 w-fit backdrop-blur-md rounded-full py-[1rem] px-[2rem] mx-auto">
               <Star />
-              <h5 className="text-[#FFA6F8] whitespace-nowrap">
+              <motion.h5
+                className="text-[#FFA6F8] whitespace-nowrap"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+              >
                 Customized card for you
-              </h5>
+              </motion.h5>
               <Star />
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-3xl bold md:text-6xl  mb-[1.5rem] text-white tracking-tight">
+          <motion.h1
+            className="text-3xl sm:text-3xl bold md:text-6xl mb-[1.5rem] text-white tracking-tight"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+          >
             Experience Financial
             <span className="text-[#FFA6F8]"> Freedom</span> with
             <span className="text-[#FFA6F8]"> Ondepay</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-md text-gray-400 mb-[1.5rem] max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            className="text-md text-gray-400 mb-[1.5rem] max-w-2xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          >
             Welcome to Ondepay, where every transaction is smooth, secure, and
             speedy. Designed for entrepreneurs, freelancers, and general users.
-          </p>
+          </motion.p>
 
           <div className="flex justify-center items-center gap-3">
-            <button
+            <motion.button
               className="flex gap-3 justify-center items-center bg-[#FFA6F8] text-black rounded-[3rem] font-medium text-sm
-                       shadow-lg hover:shadow-xl hover:bg-opacity-95 transition-all duration-300"
+                         shadow-lg hover:shadow-xl hover:bg-black hover:text-[#FFA6F8] hover:bg-opacity-95 "
               style={{
                 backdropFilter: "blur(10px)",
                 textShadow: "0 0 1px rgba(0,0,0,0.1)",
               }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              
             >
               <Link
                 to="/download"
-                className="flex gap-3  px-10 py-3 justify-center items-center  "
+                className="flex gap-3  px-10 py-3 justify-center items-center"
               >
-                {" "}
-                Download Now <ArrowRightIcon size={15} />{" "}
+                Download Now <ArrowRightIcon size={15} />
               </Link>
-            </button>
+            </motion.button>
 
-            <Link
-              to="/about"
-              className="hidden md:flex gap-3 justify-center items-center bg-transparent border-white border-2 text-white px-10 py-3 rounded-[3rem] font-medium text-sm
-                       shadow-lg hover:shadow-xl hover:bg-opacity-95 transition-all duration-300"
+            <motion.button
+              className="hidden md:flex gap-3 justify-center items-center bg-transparent border-white border-2 text-white  rounded-[3rem] font-medium text-sm
+                         shadow-lg hover:shadow-xl hover:bg-white hover:text-black hover:bg-opacity-95"
               style={{
                 backdropFilter: "blur(10px)",
                 textShadow: "0 0 1px rgba(0,0,0,0.1)",
               }}
+              
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              
+              
             >
-              Learn More <ArrowRightIcon size={15} />
-            </Link>
+              <Link
+                to="/about"
+                className="flex gap-3  px-10 py-3 justify-center items-center"
+              >
+                Learn More <ArrowRightIcon size={15} />
+              </Link>
+            </motion.button>
           </div>
+
           <div className="mt-5 flex flex-col items-center justify-center">
             <img src={phone} alt="" />
           </div>
         </div>
+
         {[1, 2, 3, 4, 5, 6].map((data, index) => {
           const positions = [
             "w-[2rem] top-[1%] md:top-[10%] left-[10%]",
-            "w-5 md:w-[2.5rem] top-[18%] md:top-[10%]  right-[10%]",
+            "w-5 md:w-[2.5rem] top-[18%] md:top-[10%] right-[10%]",
             "hidden md:flex w-[1.2rem] top-[40%] left-[25%]",
-            "w-[2rem]  bottom-[10%] left-[10%]",
+            "w-[2rem] bottom-[10%] left-[10%]",
             "w-[2rem] bottom-[10%] right-[10%]",
             "hidden md:flex w-[2rem] top-[25%] right-[40%]",
           ];
 
           return (
-            <img
+            <motion.img
               src={star}
               key={data}
               className={`${positions[index]} absolute`}
               alt=""
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, ease: "easeOut", delay: index * 0.2 }}
             />
           );
         })}

@@ -85,6 +85,7 @@ function Navbar() {
         <Link to="/contact" className="block text-black py-2">
           Contact
         </Link>
+        
       </div>
     </header>
   );
