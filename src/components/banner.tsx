@@ -43,14 +43,20 @@ const BannerComponent: React.FC = () => {
 
           <div className="flex justify-center items-center gap-3">
             <button
-              className="flex gap-3 justify-center items-center bg-[#FFA6F8] text-black px-10 py-3 rounded-[3rem] font-medium text-sm
+              className="flex gap-3 justify-center items-center bg-[#FFA6F8] text-black rounded-[3rem] font-medium text-sm
                        shadow-lg hover:shadow-xl hover:bg-opacity-95 transition-all duration-300"
               style={{
                 backdropFilter: "blur(10px)",
                 textShadow: "0 0 1px rgba(0,0,0,0.1)",
               }}
             >
-              Download Now <ArrowRightIcon size={15} />
+              <Link
+                to="/download"
+                className="flex gap-3  px-10 py-3 justify-center items-center  "
+              >
+                {" "}
+                Download Now <ArrowRightIcon size={15} />{" "}
+              </Link>
             </button>
 
             <Link

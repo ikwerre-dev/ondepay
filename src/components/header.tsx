@@ -51,9 +51,9 @@ function Navbar() {
               </Link>
             </div>
 
-            <button className="bg-[#FFA6F8] hover:bg-pink-500 text-black rounded-full px-6 py-3 text-sm font-normal transition-colors">
+            <Link to="/download" className="bg-[#FFA6F8] hover:bg-pink-500 text-black rounded-full px-6 py-3 text-sm font-normal transition-colors">
               Download
-            </button>
+            </Link>
 
             <button
               className="md:hidden text-white"
