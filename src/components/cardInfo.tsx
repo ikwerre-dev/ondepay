@@ -1,18 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import cardinfo from "../assets/cardinfo.png";
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-    },
-  }),
-};
+ 
 const CardInfo = () => {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center gap-[2.5rem] py-[5rem] bg-gradient-to-b from-[#211123] to-[#0d0511]">
