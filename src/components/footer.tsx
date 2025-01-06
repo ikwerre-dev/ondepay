@@ -21,23 +21,26 @@ const Footer = () => {
               <img src={logo} className="w-[7rem]" alt="" />
             </div>
             <p className="text-sm text-gray-400">
-              Lorem ipsum dolor sit amet consectetur. Imperdiet commodo elit
-              augue rhoncus libero duis risus in.
+              At Ondepay, our mission is to revolutionize the payment landscape
+              in Africa. We empower individuals and businesses with fast, easy,
+              and flawless payment solutions. Our vision is to become the most
+              trusted and beloved payment platform across Africa, known for its
+              reliability and user-friendly experience.
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:support@paysteeze.com"
+                href="mailto:support@ondepay.com"
                 className="flex items-center space-x-2 text-sm hover:text-purple-400"
               >
                 <Mail className="w-4 h-4" />
-                <span>support@paysteeze.com</span>
+                <span>support@ondepay.com</span>
               </a>
               <a
-                href="tel:+2439012345678"
+                href="tel:+23409034281922"
                 className="flex items-center space-x-2 text-sm hover:text-purple-400"
               >
                 <Phone className="w-4 h-4" />
-                <span>+243 9012345678</span>
+                <span>+243 9034281922</span>
               </a>
             </div>
           </div>
@@ -85,7 +88,6 @@ const Footer = () => {
                 <Link to="/terms" className="text-sm hover:text-purple-400">
                   Terms & Condition
                 </Link>
-                
               </li>
             </ul>
           </div>

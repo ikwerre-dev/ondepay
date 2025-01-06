@@ -19,6 +19,13 @@ function Navbar() {
 
             <div className="hidden md:flex items-center gap-8">
               <Link
+                to="/"
+                className="text-white/70 hover:text-white text-sm transition-colors"
+              >
+                Home
+              </Link>
+              
+              <Link
                 to="/about"
                 className="text-white/70 hover:text-white text-sm transition-colors"
               >
@@ -58,35 +65,27 @@ function Navbar() {
         </div>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-[#FFA6F8] p-4">
-          <Link
-            to="/about"
-            className="block text-black py-2"
-          >
-            About
-          </Link>
-          <Link
-            to="/features"
-            className="block text-black py-2"
-          >
-            Features
-          </Link>
-          <Link
-            to="/faq"
-            className="block text-black py-2"
-          >
-            FAQs
-          </Link>
-          <Link
-            to="/contact"
-            className="block text-black py-2"
-          >
-            Contact
-          </Link>
-          
-        </div>
-      )}
+      <div
+        className={`md:hidden absolute top-full left-0 right-0 bg-[#FFA6F8] p-4 transition-all duration-300 ease-in-out ${
+          isMenuOpen ? "opacity-100 max-h-[500px]" : "opacity-0 max-h-0 overflow-hidden"
+        }`}
+      >
+        <Link to="/" className="block text-black py-2">
+          Home
+        </Link>
+        <Link to="/about" className="block text-black py-2">
+          About
+        </Link>
+        <Link to="/features" className="block text-black py-2">
+          Features
+        </Link>
+        <Link to="/faq" className="block text-black py-2">
+          FAQs
+        </Link>
+        <Link to="/contact" className="block text-black py-2">
+          Contact
+        </Link>
+      </div>
     </header>
   );
 }

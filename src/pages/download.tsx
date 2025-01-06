@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-function Download() {
+function NotFound() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -70,5 +70,5 @@ function Download() {
   );
 }
 
-export default Download;
+export default NotFound;
 
