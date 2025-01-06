@@ -66,7 +66,7 @@ function Navbar() {
       </div>
 
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-[#FFA6F8] p-4 transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-[#FFA6F8] p-4 z-50 transition-all duration-300 ease-in-out ${
           isMenuOpen ? "opacity-100 max-h-[500px]" : "opacity-0 max-h-0 overflow-hidden"
         }`}
       >
