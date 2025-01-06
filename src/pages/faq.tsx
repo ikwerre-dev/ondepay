@@ -1,9 +1,13 @@
 import HeaderComponent from "../components/header";
 import Footer from "../components/footer";
 import FAQSection from "../components/faq";
+import { useEffect } from "react";
 
 function FAQPage() {
- 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="min-h-screen">

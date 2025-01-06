@@ -6,9 +6,13 @@ import CardInfo from "../components/cardInfo";
 import Testimonial from "../components/testimonial";
 import FAQSection from "../components/faq";
 import Footer from "../components/footer";
+import { useEffect } from "react";
 
 function App() {
- 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="min-h-screen">

@@ -1,9 +1,13 @@
 import HeaderComponent from "../components/header";
 import FeaturesSection from "../components/features"; 
 import Footer from "../components/footer";
+import { useEffect } from "react";
 
 function Features() {
- 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   return (
     <div className="min-h-screen">

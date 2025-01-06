@@ -2,8 +2,13 @@ import HeaderComponent from "../components/header";
 import Footer from "../components/footer";
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function NotFound() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }

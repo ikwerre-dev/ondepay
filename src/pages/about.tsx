@@ -1,8 +1,13 @@
 import HeaderComponent from "../components/header";
 import Footer from "../components/footer";
 import { motion } from 'framer-motion';
+import { useEffect } from "react";
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
