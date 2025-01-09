@@ -3,7 +3,7 @@ import Lenis, { LenisOptions } from "@studio-freight/lenis";
 import BannerComponent from "../components/banner";
 import HeaderComponent from "../components/header";
 import FeaturesSection from "../components/features";
-import PartnersSection from "../components/partners";
+// import PartnersSection from "../components/partners";
 import CardInfo from "../components/cardInfo";
 import Testimonial from "../components/testimonial";
 import FAQSection from "../components/faq";
@@ -43,7 +43,7 @@ function App(): JSX.Element {
       />
       <HeaderComponent />
       <BannerComponent />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <FeaturesSection />
       <CardInfo />
       <Testimonial />
