@@ -95,13 +95,15 @@ const FeaturesSection: React.FC = () => {
           >
             <h3 className="text-2xl mb-4">
               <span className="text-white">Effortlessly</span>{" "}
-              <span className="text-[#FFA6F8]">Spend</span>
+              <span className="text-[#FFA6F8]">Manage Your Money</span>
             </h3>
             <p className="text-gray-300 my-8">
-              Our digital card allows you to spend your{" "}
-              <span className="text-[#FFA6F8]">digital assets</span> with ease.
+              Transfer funds between your{" "}
+              <span className="text-[#FFA6F8]">bank account</span> or{" "}
+              <span className="text-[#FFA6F8]">wallet</span> with ease.
             </p>
-            <div className="relative min-h-[15rem] flex justify-center flex-grow">
+            
+            <div className="relative min-h-[15rem] flex justify-center flex-grow mt-8">
               <div className="absolute bottom-8">
                 <img
                   src={feature5}
